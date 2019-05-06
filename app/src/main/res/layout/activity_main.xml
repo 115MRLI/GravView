@@ -1,18 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.example.gravview.GravView
+        android:id="@+id/grav"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:animationGenerators="@array/BubbleAnimations"
+        app:array_colors="@array/red"
+        app:ball_size_from_size="3dp"
+        app:ball_size_to_size="6dp"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+        app:path="@string/wallapop"
+        app:path_max_duration="6000"
+        app:path_min_duration="5000"
+        app:path_original_height="@integer/wallapop_original_height"
+        app:path_original_width="@integer/wallapop_original_width"
+        app:path_variance_from="-10dp"
+        app:path_variance_to="12dp"
+        app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+        app:regular_cell_size="150"
+        app:regular_variance="100" />
 
-</android.support.constraint.ConstraintLayout>
+    <com.example.gravview.GravView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:animationGenerators="@array/path"
+        app:array_colors="@array/red"
+        app:ball_size_from_size="3dp"
+        app:ball_size_to_size="6dp"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+        app:path="@string/circle"
+        app:path_max_duration="6000"
+        app:path_min_duration="5000"
+        app:path_original_height="@integer/circle_original_height"
+        app:path_original_width="@integer/circle_original_width"
+        app:path_variance_from="-10dp"
+        app:path_variance_to="12dp"
+        app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+        app:regular_cell_size="150"
+        app:regular_variance="100" />
+
+</LinearLayout>
